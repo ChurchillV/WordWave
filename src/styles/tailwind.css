@@ -37,3 +37,11 @@
 .letter-tile {
     @apply p-7 px-10 border border-black shadow-md text-center w-fit my-8 mx-10 hover:cursor-pointer hover:brightness-75;
 }
+
+.user-input-tile {
+    @apply p-8 border border-black shadow-md text-center w-fit my-3 mx-2;
+}
+
+.guess-row {
+
+}
