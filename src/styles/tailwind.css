@@ -39,7 +39,7 @@
 }
 
 .user-input-tile {
-    @apply p-8 border border-black shadow-md text-center w-fit my-3 mx-2;
+    @apply p-8 border border-black shadow-md text-center w-fit lg:my-3 lg:mx-2 m-2;
 }
 
 .guess-row {

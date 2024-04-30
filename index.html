@@ -10,14 +10,92 @@
 <body class="overflow-x-hidden">
 
     <!-- Header component -->
-    <div class="font-space-mono text-center py-8 text-5xl border border-black shadow-md">
+    <div class="font-space-mono text-center py-8 text-5xl border-b border-black shadow-md">
         WordWave
+    </div>
+    
+    <!-- Hamburger Menu for smaller screens -->
+    <div class="lg:hidden mx-12 mt-8 border w-fit border-black hover:cursor-pointer hover:shadow-md hover:brightness-75">
+        <svg xmlns="http://www.w3.org/2000/svg" 
+        width="3em" 
+            height="3em" 
+            viewBox="0 0 24 24">
+            <path fill="currentColor" 
+            d="M3 18v-2h18v2zm0-5v-2h18v2zm0-5V6h18v2z"/>
+        </svg>
+    </div>
+
+    <div class="absolute hidden sidebar w-full left-0 z-20 top-1/2 ml-12 ">
+        <!-- Sidebar menu for smaller screens -->
+        <div class="mt-12 transform -translate-x-1/2 -translate-y-1/2 rounded-lg border ml-12 h-screen lg:hidden w-fit p-6 bg-white border-r-2 border-black flex flex-col items-end font-space-mono">
+            <!-- Close button -->
+            <div class="border border-black p-3 flex flex-row ml-3 mb-12 items-end" id="close-menu-button">
+                <div>
+                    <svg xmlns="http://www.w3.org/2000/svg" 
+                        width="3em" 
+                        height="3em" 
+                        viewBox="0 0 24 24">
+                        <path fill="currentColor" 
+                            d="M8.4 17L7 15.6l3.6-3.6L7 8.425l1.4-1.4l3.6 
+                            3.6l3.575-3.6l1.4 1.4l-3.6 3.575l3.6 3.6l-1.4 
+                            1.4L12 13.4z"/>
+                    </svg> 
+                </div>
+            </div>
+
+            <div class="menu-item flex flex-row justify-start items-center mb-8 border-b border-black p-5">
+                <div class="icon mx-1">
+                    <svg xmlns="http://www.w3.org/2000/svg" 
+                    width="3em" 
+                    height="3em" 
+                    class="text-center"
+                    viewBox="0 0 24 24">
+                    <path fill="currentColor" 
+                    d="M11 17h2v-6h-2zm1-8q.425 0 .713-.288T13 8t-.288-.712T12 7t-.712.288T11 
+                    8t.288.713T12 9m0 13q-2.075 0-3.9-.788t-3.175-2.137T2.788 15.9T2 12t.788-3.9t2.137-3.175T8.1 
+                    2.788T12 2t3.9.788t3.175 2.137T21.213 8.1T22 12t-.788 3.9t-2.137 3.175t-3.175 2.138T12 22"/>
+                </svg>
+            </div>
+            <div class="item-name text-4xl mx-1">Tips</div>
+        </div>
+        <div class="menu-item flex flex-row justify-start items-center mb-8 border-b border-black  p-5">
+            <div class="icon mx-1">
+                <svg xmlns="http://www.w3.org/2000/svg"
+                class="fill-green-300" 
+                width="3em" 
+                height="3em"
+                viewBox="0 0 24 24">
+                <path fill="currentColor" 
+                d="M10.6 16q0-2.025.363-2.912T12.5 11.15q1.025-.9 1.563-1.562t.537-1.513q0-1.025-.687-1.7T12 
+                5.7q-1.275 0-1.937.775T9.125 8.05L6.55 6.95q.525-1.6 1.925-2.775T12 3q2.625 0 4.038 1.463t1.412 
+                3.512q0 1.25-.537 2.138t-1.688 2.012Q14 13.3 13.738 13.913T13.475 16zm1.4 6q-.825 0-1.412-.587T10 
+                20t.588-1.412T12 18t1.413.588T14 20t-.587 1.413T12 22"/>
+                </svg>
+            </div>
+            <div class="item-name text-4xl mx-1">Hint</div>
+        </div>
+        <div class="menu-item flex flex-row justify-start items-center mb-8 border-b border-black p-5">
+            <div class="icon mx-1">
+                <svg xmlns="http://www.w3.org/2000/svg" 
+                    width="3em" 
+                    height="3em" 
+                    viewBox="0 0 24 24">
+                    <path fill="currentColor" 
+                    d="M6.4 19L5 17.6l5.6-5.6L5 6.4L6.4 
+                    5l5.6 5.6L17.6 5L19 6.4L13.4 12l5.6 
+                    5.6l-1.4 1.4l-5.6-5.6z"/>
+                </svg>
+            </div>
+                <div class="item-name text-4xl mx-1">Quit</div>
+            </div>
+        </div>
     </div>
 
     <!-- Main body -->
-    <div class="grid grid-cols-8 gap-4 h-11 mt-8">
+    <div class="relative lg:grid lg:grid-cols-8 lg:gap-4 mt-8">
+
         <!-- Left Sidebar -->
-        <div class="col-span-1 flex flex-col justify-center items-center border border-black shadow-md rounded-r-lg p-5 text-center font-space-mono">
+        <div class="col-span-1 lg:flex lg:flex-col hidden justify-center items-center border border-black shadow-md rounded-r-lg p-5 text-center font-space-mono">
             <div class="sidebar-icon tooltip">
                 <svg xmlns="http://www.w3.org/2000/svg" 
                     width="5em" 
@@ -59,7 +137,7 @@
             </div>
         </div>
         <!-- Center piece -->
-        <div class="col-span-6 flex flex-col items-center">
+        <div class="col-span-6 flex flex-col items-center z-0">
             <div class="guess-row flex items-center">
                 <div class="user-input-tile"></div>
                 <div class="user-input-tile"></div>
@@ -104,7 +182,7 @@
             </div>
         </div>
         <!-- Right Sidebar -->
-        <div class="col-span-1 flex flex-col justify-center items-center border border-black shadow-md rounded-l-lg p-5 text-center font-space-mono">
+        <div class="col-span-1 lg:flex lg:flex-col hidden justify-center items-center border border-black shadow-md rounded-l-lg p-5 text-center font-space-mono">
             <div class="letter-tile bg-green-600 text-4xl text-white tooltip hover:bg-green-800">
                 3
                 <span class="tooltiptext tooltiptext-right text-sm text-nowrap">Letters in the word and in the right position</span>
