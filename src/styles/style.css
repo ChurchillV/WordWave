@@ -899,12 +899,6 @@ video {
 
 @media (min-width: 640px) {
   .user-input-tile {
-    padding: 0.75rem;
-  }
-}
-
-@media (min-width: 768px) {
-  .user-input-tile {
     padding: 1.25rem;
   }
 }
