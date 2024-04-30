@@ -596,6 +596,16 @@ video {
   margin-right: 3rem;
 }
 
+.mx-2 {
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+}
+
+.mx-11 {
+  margin-left: 2.75rem;
+  margin-right: 2.75rem;
+}
+
 .mb-12 {
   margin-bottom: 3rem;
 }
@@ -618,6 +628,22 @@ video {
 
 .mt-8 {
   margin-top: 2rem;
+}
+
+.ml-6 {
+  margin-left: 1.5rem;
+}
+
+.ml-1 {
+  margin-left: 0.25rem;
+}
+
+.ml-2 {
+  margin-left: 0.5rem;
+}
+
+.mt-5 {
+  margin-top: 1.25rem;
 }
 
 .flex {
@@ -677,6 +703,10 @@ video {
 
 .justify-center {
   justify-content: center;
+}
+
+.self-start {
+  align-self: flex-start;
 }
 
 .overflow-x-hidden {

@@ -13,17 +13,6 @@
     <div class="font-space-mono text-center py-8 text-5xl border-b border-black shadow-md">
         WordWave
     </div>
-    
-    <!-- Hamburger Menu for smaller screens -->
-    <div class="lg:hidden mx-12 flex flex-row justify-start mt-8 border w-fit border-black hover:cursor-pointer hover:shadow-md hover:brightness-75">
-        <svg xmlns="http://www.w3.org/2000/svg" 
-        width="3em" 
-            height="3em" 
-            viewBox="0 0 24 24">
-            <path fill="currentColor" 
-            d="M3 18v-2h18v2zm0-5v-2h18v2zm0-5V6h18v2z"/>
-        </svg>
-    </div>
 
     <div class="absolute hidden sidebar w-full left-0 z-20 top-1/2 ml-12 ">
         <!-- Sidebar menu for smaller screens -->
@@ -137,7 +126,19 @@
             </div>
         </div>
         <!-- Center piece -->
-        <div class="col-span-6 flex flex-col items-center z-0">
+        <div class="col-span-6 flex flex-col items-center mx-12 z-0">
+
+            <!-- Hamburger Menu for smaller screens -->
+            <div class="lg:hidden flex flex-row self-start mt-5 mb-8 border w-fit border-black hover:cursor-pointer hover:shadow-md hover:brightness-75">
+                <svg xmlns="http://www.w3.org/2000/svg" 
+                width="3em" 
+                    height="3em" 
+                    viewBox="0 0 24 24">
+                    <path fill="currentColor" 
+                    d="M3 18v-2h18v2zm0-5v-2h18v2zm0-5V6h18v2z"/>
+                </svg>
+            </div>
+
             <div class="guess-row flex items-center">
                 <div class="user-input-tile"></div>
                 <div class="user-input-tile"></div>
