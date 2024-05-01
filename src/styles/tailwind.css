@@ -46,8 +46,12 @@
     @apply lg:p-8 p-5 border border-black shadow-md text-center w-fit lg:my-3 lg:mx-2 m-1;
 }
 
-.guess-row {
+.sidebar-content {
+    @apply mt-12 transform -translate-x-1/2 -translate-y-1/2 rounded-lg border ml-12 h-screen lg:hidden w-fit p-6 bg-white border-r-2 border-black flex flex-col items-end font-space-mono;
+}
 
+.menu-item {
+    @apply hover:shadow-md hover:brightness-75 hover:cursor-pointer flex flex-row justify-start items-center mb-8 border-b border-black p-5 pr-10;
 }
 
 .tooltip {

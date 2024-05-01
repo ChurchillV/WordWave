@@ -15,11 +15,11 @@
         WordWave
     </div>
 
-    <div class="absolute hidden sidebar w-full left-0 z-20 top-1/2 ml-12 ">
+    <div class="absolute hidden w-full left-0 z-20 top-1/2 ml-12" id="sidebar">
         <!-- Sidebar menu for smaller screens -->
-        <div class="mt-12 transform -translate-x-1/2 -translate-y-1/2 rounded-lg border ml-12 h-screen lg:hidden w-fit p-6 bg-white border-r-2 border-black flex flex-col items-end font-space-mono">
+        <div class="sidebar-content">
             <!-- Close button -->
-            <div class="border border-black p-3 flex flex-row ml-3 mb-12 items-end" id="close-menu-button">
+            <div class="border border-black flex flex-row ml-3 mb-12 items-end hover:shadow-md hover:cursor-pointer" id="close-menu-button">
                 <div>
                     <svg xmlns="http://www.w3.org/2000/svg" 
                         width="3em" 
@@ -33,7 +33,7 @@
                 </div>
             </div>
 
-            <div class="menu-item flex flex-row justify-start items-center mb-8 border-b border-black p-5">
+            <div class="menu-item">
                 <div class="icon mx-1">
                     <svg xmlns="http://www.w3.org/2000/svg" 
                     width="3em" 
@@ -48,7 +48,7 @@
             </div>
             <div class="item-name text-4xl mx-1">Tips</div>
         </div>
-        <div class="menu-item flex flex-row justify-start items-center mb-8 border-b border-black  p-5">
+        <div class="menu-item">
             <div class="icon mx-1">
                 <svg xmlns="http://www.w3.org/2000/svg"
                 class="fill-green-300" 
@@ -64,7 +64,7 @@
             </div>
             <div class="item-name text-4xl mx-1">Hint</div>
         </div>
-        <div class="menu-item flex flex-row justify-start items-center mb-8 border-b border-black p-5">
+        <div class="menu-item">
             <div class="icon mx-1">
                 <svg xmlns="http://www.w3.org/2000/svg" 
                     width="3em" 
@@ -130,7 +130,7 @@
         <div class="col-span-6 flex flex-col items-center mx-12 z-0">
 
             <!-- Hamburger Menu for smaller screens -->
-            <div class="lg:hidden flex flex-row self-start mt-5 mb-8 border w-fit border-black hover:cursor-pointer hover:shadow-md hover:brightness-75">
+            <div class="lg:hidden self-start mt-5 mb-8 border w-fit border-black hover:cursor-pointer hover:shadow-md hover:brightness-75" id="open-menu-button">
                 <svg xmlns="http://www.w3.org/2000/svg" 
                 width="3em" 
                     height="3em" 
