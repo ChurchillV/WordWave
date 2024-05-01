@@ -38,6 +38,10 @@
     @apply p-7 px-10 border border-black shadow-md text-center w-fit my-8 mx-10 hover:cursor-pointer;
 }
 
+.letter-tile-mini {
+    @apply p-3 px-5 border border-black shadow-md text-center w-fit my-8 mx-10 hover:cursor-pointer
+}
+
 .user-input-tile {
     @apply lg:p-8 p-5 border border-black shadow-md text-center w-fit lg:my-3 lg:mx-2 m-1;
 }
@@ -77,6 +81,20 @@
     z-index: 1;
     top: 50%;
     left: calc(100% + 0.5rem);
+    transform: translateY(-50%);
+}
+
+.tooltiptext-top {
+    visibility: hidden;
+    width: auto;
+    background-color: rgba(0, 0, 0, 0.75);
+    color: #fff;
+    text-align: center;
+    padding: 0.5rem;
+    border-radius: 0.25rem;
+    position: absolute;
+    z-index: 1;
+    bottom: calc(100% + 0.5rem);
     transform: translateY(-50%);
   }
   

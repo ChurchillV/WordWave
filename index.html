@@ -182,17 +182,34 @@
                 <div class="user-input-tile"></div>
             </div>
         </div>
+
+        <!-- Colour tiles for smaller screens -->
+        <div class="flex flex-row items-center justify-center font-space-mono lg:hidden">
+            <div class="letter-tile-mini green bg-green-600 text-2xl text-white tooltip hover:bg-green-800">
+                3
+                <span class="tooltiptext tooltiptext-top text-sm text-nowrap">Letters in the word and in the right position</span>
+            </div>
+            <div class="letter-tile-mini yellow bg-yellow-400 text-2xl text-black tooltip hover:bg-yellow-600">
+                3
+                <span class="tooltiptext tooltiptext-top text-sm text-nowrap">Letters in the word but in the wrong position</span>
+            </div>
+            <div class="letter-tile-mini red bg-red-600 text-2xl text-white tooltip hover:bg-red-700">
+                3
+                <span class="tooltiptext tooltiptext-top text-sm text-nowrap">Letters not in the word</span>
+            </div>
+        </div>
+
         <!-- Right Sidebar -->
         <div class="col-span-1 lg:flex lg:flex-col hidden justify-center items-center border border-black shadow-md rounded-l-lg p-5 text-center font-space-mono">
-            <div class="letter-tile bg-green-600 text-4xl text-white tooltip hover:bg-green-800">
+            <div class="letter-tile green bg-green-600 text-4xl text-white tooltip hover:bg-green-800">
                 3
                 <span class="tooltiptext tooltiptext-right text-sm text-nowrap">Letters in the word and in the right position</span>
             </div>
-            <div class="letter-tile bg-yellow-400 text-4xl text-black tooltip hover:bg-yellow-600">
+            <div class="letter-tile yellow bg-yellow-400 text-4xl text-black tooltip hover:bg-yellow-600">
                 3
                 <span class="tooltiptext tooltiptext-right text-sm text-nowrap">Letters in the word but in the wrong position</span>
             </div>
-            <div class="letter-tile bg-red-600 text-4xl text-white tooltip hover:bg-red-700">
+            <div class="letter-tile red bg-red-600 text-4xl text-white tooltip hover:bg-red-700">
                 3
                 <span class="tooltiptext tooltiptext-right text-sm text-nowrap">Letters not in the word</span>
             </div>
