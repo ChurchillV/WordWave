@@ -10,21 +10,21 @@
 }
 
 @font-face {
-    font-family: 'Space Mono';
+    font-family: 'Space MonoB';
     src: url('../../Fonts/Space_Mono/SpaceMono-Bold.ttf') format('truetype');
     font-weight: bold;
     font-style: normal;
 }
 
 @font-face {
-    font-family: 'Space Mono';
+    font-family: 'Space MonoI';
     src: url('../../Fonts/Space_Mono/SpaceMono-Italic.ttf') format('truetype');
     font-weight: normal;
     font-style: italic;
 }
 
 @font-face {
-    font-family: 'Space Mono';
+    font-family: 'Space MonoBI';
     src: url('../../Fonts/Space_Mono/SpaceMono-BoldItalic.ttf') format('truetype');
     font-weight: bold;
     font-style: italic;
@@ -43,7 +43,7 @@
 }
 
 .user-input-tile {
-    @apply lg:p-8 p-5 border border-black shadow-md text-center w-fit lg:my-3 lg:mx-2 m-1;
+    @apply lg:px-6 lg:py-4 py-2 px-4 border border-black shadow-md text-center w-fit lg:my-3 lg:mx-2 m-1 font-space-mono;
 }
 
 .sidebar-content {

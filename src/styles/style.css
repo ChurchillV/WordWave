@@ -616,6 +616,10 @@ video {
   margin-top: 1.25rem;
 }
 
+.mt-6 {
+  margin-top: 1.5rem;
+}
+
 .mt-8 {
   margin-top: 2rem;
 }
@@ -711,8 +715,17 @@ video {
   fill: #86efac;
 }
 
+.p-4 {
+  padding: 1rem;
+}
+
 .p-5 {
   padding: 1.25rem;
+}
+
+.px-10 {
+  padding-left: 2.5rem;
+  padding-right: 2.5rem;
 }
 
 .py-8 {
@@ -726,6 +739,10 @@ video {
 
 .font-space-mono {
   font-family: Space Mono, monospace;
+}
+
+.font-space-monob {
+  font-family: Space MonoB, monospace;
 }
 
 .text-2xl {
@@ -775,7 +792,7 @@ video {
 }
 
 @font-face {
-  font-family: 'Space Mono';
+  font-family: 'Space MonoB';
 
   src: url('../../Fonts/Space_Mono/SpaceMono-Bold.ttf') format('truetype');
 
@@ -785,7 +802,7 @@ video {
 }
 
 @font-face {
-  font-family: 'Space Mono';
+  font-family: 'Space MonoI';
 
   src: url('../../Fonts/Space_Mono/SpaceMono-Italic.ttf') format('truetype');
 
@@ -795,7 +812,7 @@ video {
 }
 
 @font-face {
-  font-family: 'Space Mono';
+  font-family: 'Space MonoBI';
 
   src: url('../../Fonts/Space_Mono/SpaceMono-BoldItalic.ttf') format('truetype');
 
@@ -880,8 +897,12 @@ video {
   border-width: 1px;
   --tw-border-opacity: 1;
   border-color: rgb(0 0 0 / var(--tw-border-opacity));
-  padding: 1.25rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
   text-align: center;
+  font-family: Space Mono, monospace;
   --tw-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
   --tw-shadow-colored: 0 4px 6px -1px var(--tw-shadow-color), 0 2px 4px -2px var(--tw-shadow-color);
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
@@ -893,7 +914,10 @@ video {
     margin-bottom: 0.75rem;
     margin-left: 0.5rem;
     margin-right: 0.5rem;
-    padding: 2rem;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
   }
 }
 
