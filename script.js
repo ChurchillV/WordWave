@@ -26,6 +26,12 @@ const rows = document.querySelectorAll('.guess-row');
 // Submit button appears once a user fills a row
 let submitButton = document.getElementById('submit-button');
 
+submitButton.addEventListener('click', function() {
+    console.log(word);
+    validateAnswer(word);
+    submitButton.classList.add('hidden');
+})
+
 // Function to focus the first tile of the next row
 function focusFirstTileOfNextRow(currentRow) {
     const nextRow = currentRow.nextElementSibling;
@@ -46,6 +52,9 @@ function validateAnswer(input) {
     }
 }
 
+let word = '';
+let isValidationComplete = false;
+
 rows.forEach((row, index) => {
     const tiles = Array.from(row.querySelectorAll('.user-input-tile'));
 
@@ -62,18 +71,12 @@ rows.forEach((row, index) => {
                     tiles[nextIndex].focus();
 
                 } else {
-                    const word = tiles.map(tile => tile.innerText.trim()).join('');
+                    word = tiles.map(tile => tile.innerText.trim()).join('');
                     console.log(word);
                     submitButton.classList.remove('hidden');
-
-                    submitButton.addEventListener('click', function() {
-                        const currentWord = tiles.map(tile => tile.innerText.trim()).join('');
-                        setTimeout(()=> {
-                            validateAnswer(currentWord);
-                            submitButton.classList.add('hidden');
-                            focusFirstTileOfNextRow(row);
-                        }, 2000);
-                    })
+                    if(submitButton.classList.contains('hidden')) {
+                        focusFirstTileOfNextRow(row);
+                    }
                 }
             }
         } else if (event.key === 'Enter') {
