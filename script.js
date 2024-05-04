@@ -49,7 +49,7 @@ function validateAnswer(input) {
 rows.forEach((row, index) => {
     const tiles = Array.from(row.querySelectorAll('.user-input-tile'));
 
-    row.addEventListener('keydown', event => {
+    row.addEventListener('keypress', event => {
         const currentIndex = tiles.findIndex(tile => tile === document.activeElement);
 
         if (event.key.length === 1 && /^[a-zA-Z]$/.test(event.key)) {
