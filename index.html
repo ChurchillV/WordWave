@@ -15,6 +15,39 @@
         WordWave
     </div>
 
+    <div class="h-16 place-items-center hidden" id="alert-box">
+        <!-- Alert box -->
+        <div class="border border-black font-space-mono bg-white rounded-lg p-8 px-12 mt-12 z-30">
+            <div class="flex flex-col items-center justify-center">
+                <div class="icon rounded-full border border-black p-6 bg-green-500 mb-5">
+                    <svg xmlns="http://www.w3.org/2000/svg" 
+                        width="7em" 
+                        height="7em" 
+                        viewBox="0 0 24 24">
+                        <path fill="currentColor" 
+                            d="M2 22L7 8l9 9zm12.55-9.45L13.5 
+                            11.5l7.525-7.525L23.55 6.5L22.5 
+                            7.55l-1.475-1.475zm-4-4L9.5 
+                            7.5l1.45-1.45l-1.5-1.5L10.5 
+                            3.5l2.55 2.55zm2 2L11.5 9.5l4.475-4.475L13.5 
+                            2.55l1.05-1.05l3.525 3.525zm4 4L15.5 
+                            13.5l3.525-3.525L22.55 
+                            13.5l-1.05 1.05l-2.475-2.475z"/>
+                    </svg>
+                </div>
+    
+                <div class="alert-info text-center text-3xl">
+                    <p>Congratulations <span class="text-2xl">🎊</span></p>
+                    <p>You win</p>
+                </div>
+
+                <div class="bg-green-500 font-space-monob p-4 px-10 mt-6 hover:bg-green-800 hover:cursor-pointer text-white" id="ok-button">
+                    OK
+                </div>
+            </div>
+        </div>
+    </div>
+
     <div class="absolute hidden w-full left-0 z-20 top-1/2 ml-12" id="sidebar">
         <!-- Sidebar menu for smaller screens -->
         <div class="sidebar-content">
@@ -80,9 +113,10 @@
             </div>
         </div>
     </div>
+    
 
     <!-- Main body -->
-    <div class="relative lg:grid lg:grid-cols-8 lg:gap-4 mt-8">
+    <div class="relative lg:grid lg:grid-cols-8 lg:gap-4 mt-8 overflow-x-hidden z-0" id="main-body">
 
         <!-- Left Sidebar -->
         <div class="col-span-1 lg:flex lg:flex-col hidden justify-center items-center border border-black shadow-md rounded-r-lg p-5 text-center font-space-mono">
@@ -127,7 +161,7 @@
             </div>
         </div>
         <!-- Center piece -->
-        <div class="col-span-6 flex flex-col items-center mx-12 z-0">
+        <div class="col-span-6 flex flex-col items-center mx-12 z-10">
 
             <!-- Hamburger Menu for smaller screens -->
             <div class="lg:hidden self-start mt-5 mb-8 border w-fit border-black hover:cursor-pointer hover:shadow-md hover:brightness-75" id="open-menu-button">
@@ -183,8 +217,28 @@
                 <div class="user-input-tile" contenteditable="true"></div>
             </div>
 
+            <!-- Virtual keyboard
+            <div class="simple-keyboard"></div> 
+            <input class="input" placeholder="Tap on the virtual keyboard to start" /> -->
+
             <div id="submit-button" class="hidden">
                 <button class="p-4 px-10 mt-6 font-space-monob text-white bg-green-600 hover:bg-green-800">Submit</button>
+            </div>
+
+            <div class="hidden" id="reset-button">
+                <button class="p-4 px-10 mt-6 border border-black bg-white hover:bg-gray-300">
+                    <svg xmlns="http://www.w3.org/2000/svg" 
+                        width="3em" 
+                        height="3em" 
+                        viewBox="0 0 24 24">
+                        <path fill="currentColor" 
+                            d="M11 20.95q-3.025-.375-5.012-2.637T4 13q0-1.65.65-3.162T6.5 
+                            7.2l1.425 1.425q-.95.85-1.437 1.975T6 13q0 2.2 1.4 3.888T11 
+                            18.95zm2 0v-2q2.175-.4 3.588-2.075T18 13q0-2.5-1.75-4.25T12 
+                            7h-.075l1.1 1.1l-1.4 1.4l-3.5-3.5l3.5-3.5l1.4 1.4l-1.1 
+                            1.1H12q3.35 0 5.675 2.325T20 13q0 3.025-1.987 5.288T13 20.95"/>
+                    </svg> 
+                </button>
             </div>
         </div>
 

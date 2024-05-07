@@ -1,15 +1,20 @@
-// Sidebar menu toggling logic 
 let openMenuButton = document.getElementById('open-menu-button');
 let closeMenuButton = document.getElementById('close-menu-button');
 let sidebar = document.getElementById('sidebar');
 let menuItems = document.querySelectorAll('.menu-item');
+let mainBody = document.getElementById('main-body');
+let alertBox = document.getElementById('alert-box');
+let resetButton = document.getElementById('reset-button');
 
+// No functionality for sidebar items yet
 menuItems.forEach(menuItem => {
     menuItem.addEventListener('click', function() {
         alert('Not availiable yet');
     })
 })
 
+
+// Sidebar menu toggling logic 
 openMenuButton.addEventListener('click', function() {
     sidebar.classList.remove('hidden');
 })
@@ -18,6 +23,8 @@ closeMenuButton.addEventListener('click', function() {
     sidebar.classList.add('hidden');
 })
 
+
+// Temporary answer (For testing)
 const answer = 'logic';
 
 // User input logic
@@ -43,9 +50,39 @@ function focusFirstTileOfNextRow(currentRow) {
     }
 }
 
+// Function to display alert box on winning
+function displayAlertBox() {
+    document.body.classList.add('bg-slate-400');
+    alertBox.classList.remove('hidden');
+    alertBox.classList.add('grid');
+    console.log('Checking');
+
+    // Select all elements with the class user-input-tile
+    const userTiles = document.querySelectorAll('.user-input-tile');
+
+    // Loop through each element and set contenteditable to false
+    userTiles.forEach(tile => {
+        tile.contentEditable = 'false';
+    });  
+}
+
+// Remove the alert box once the ok button is clicked
+document.getElementById('ok-button').addEventListener('click', function() {
+    alertBox.classList.remove('grid');
+    alertBox.classList.add('hidden');
+    document.body.classList.remove('bg-slate-400');
+
+    resetButton.classList.remove('hidden');
+})
+
+resetButton.addEventListener('click', function() {
+    location.reload();
+})
+
+
 function validateAnswer(input) {
     if(/^[a-zA-Z]{5}/.test(input)) {
-        input.toLowerCase() == answer ? alert('Congratulations!! You win')
+        input.toLowerCase() == answer ? displayAlertBox()
                                       : alert('Not quite the answer')
     } else {
         alert("That's not a word");
@@ -55,6 +92,8 @@ function validateAnswer(input) {
 let word = '';
 let isValidationComplete = false;
 
+
+// Handle keypress events for each row in the grid
 rows.forEach((row, index) => {
     const tiles = Array.from(row.querySelectorAll('.user-input-tile'));
 
@@ -82,26 +121,6 @@ rows.forEach((row, index) => {
         } else if (event.key === 'Enter') {
             focusFirstTileOfNextRow(row);
         }
-    });
-
-    // Disable all input tiles except those in the current row
-    row.addEventListener('focusin', () => {
-        rows.forEach(otherRow => {
-            if (otherRow !== row) {
-                otherRow.querySelectorAll('.user-input-tile').forEach(tile => {
-                    tile.disabled = true;
-                });
-            }
-        });
-    });
-
-    // Enable all input tiles when the row loses focus
-    row.addEventListener('focusout', () => {
-        rows.forEach(otherRow => {
-            otherRow.querySelectorAll('.user-input-tile').forEach(tile => {
-                tile.disabled = false;
-            });
-        });
     });
 
     // Focus the first tile of the first row initially
