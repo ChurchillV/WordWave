@@ -4,7 +4,10 @@ let sidebar = document.getElementById('sidebar');
 let menuItems = document.querySelectorAll('.menu-item');
 let mainBody = document.getElementById('main-body');
 let alertBox = document.getElementById('alert-box');
+let modalIcon = document.getElementById('modal-icon');
+let modalInfo = document.getElementById('modal-info');
 let resetButton = document.getElementById('reset-button');
+let okButton = document.getElementById('ok-button');
 
 // No functionality for sidebar items yet
 menuItems.forEach(menuItem => {
@@ -52,11 +55,21 @@ function focusFirstTileOfNextRow(currentRow) {
     }
 }
 
+const successMessage = "<p>Congratulations <span class='text-2xl'>🎊</span></p><p>You win</p>";
+const successIcon = "<svg xmlns='http://www.w3.org/2000/svg' width='7em' height='7em' viewBox='0 0 24 24'><path fill='currentColor' d='M2 22L7 8l9 9zm12.55-9.45L13.5 11.5l7.525-7.525L23.55 6.5L22.5 7.55l-1.475-1.475zm-4-4L9.5 7.5l1.45-1.45l-1.5-1.5L10.5 3.5l2.55 2.55zm2 2L11.5 9.5l4.475-4.475L13.5 2.55l1.05-1.05l3.525 3.525zm4 4L15.5 13.5l3.525-3.525L22.55 13.5l-1.05 1.05l-2.475-2.475z'/></svg>"
+const incorrectAnswerMessage = "<p>Not quite the answer</p>";
+const failureIcon = "<svg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke-width='1.5' stroke='currentColor' class='w-6 h-6'><path stroke-linecap='round' stroke-linejoin='round' d='M15.182 16.318A4.486 4.486 0 0 0 12.016 15a4.486 4.486 0 0 0-3.198 1.318M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0ZM9.75 9.75c0 .414-.168.75-.375.75S9 10.164 9 9.75 9.168 9 9.375 9s.375.336.375.75Zm-.375 0h.008v.015h-.008V9.75Zm5.625 0c0 .414-.168.75-.375.75s-.375-.336-.375-.75.168-.75.375-.75.375.336.375.75Zm-.375 0h.008v.015h-.008V9.75Z' /></svg>"
+
 // Function to display alert box on winning
 function displaySuccess() {
-    document.body.classList.add('bg-slate-400');
     alertBox.classList.remove('hidden');
     alertBox.classList.add('grid');
+    okButton.classList.remove('hidden');
+    modalIcon.innerHTML = successIcon;
+    modalIcon.classList.add('bg-green-500');
+    modalInfo.innerHTML = successMessage;
+
+    document.body.classList.add('bg-slate-400');
 
     // Loop through each input tile and set contenteditable to false
     userTiles.forEach(tile => {
@@ -64,8 +77,26 @@ function displaySuccess() {
     });  
 }
 
+// Function to notify user of a wrong answer
+function displayError() {
+    alertBox.classList.remove('hidden');
+    alertBox.classList.add('grid');
+    modalIcon.innerHTML = failureIcon;
+    modalIcon.classList.add('bg-red-300');
+    modalInfo.innerHTML = incorrectAnswerMessage;
+    
+    document.body.classList.add('bg-slate-400');
+    setTimeout(() => {
+        alertBox.classList.add('hidden');
+        alertBox.classList.remove('grid');
+        document.body.classList.remove('bg-slate-400');
+    }, 1000);
+}
+
+
+
 // Remove the alert box once the ok button is clicked
-document.getElementById('ok-button').addEventListener('click', function() {
+okButton.addEventListener('click', function() {
     alertBox.classList.remove('grid');
     alertBox.classList.add('hidden');
     document.body.classList.remove('bg-slate-400');
@@ -92,7 +123,7 @@ async function analyseAnswer() {
             const letter = answer[index];
             const userInput = tile.innerText.trim().toLowerCase();
             console.log('Checking');
-
+            
             setTimeout(() => {
                 tile.classList.add('text-white');
                 if (userInput === letter) {
@@ -117,14 +148,15 @@ async function analyseAnswer() {
 }
 
 /**
- * Reset all tiles to original color and clear text
+ * Reset all tiles to original color and clear text in case of incorrect answer
  */
 function resetTiles() {
+    displayError(); 
     userTiles.forEach((tile, index) => {
         setTimeout(() => {
             tile.classList.remove('bg-green-500', 'bg-yellow-500', 'bg-red-500', 'text-white');
             tile.innerText = '';
-        }, index*500);
+        }, index * 10);
     })
 
     userTiles[0].focus();
@@ -136,12 +168,10 @@ async function validateAnswer(input) {
 
     if(/^[a-zA-Z]{5}/.test(input)) {
         input.toLowerCase() == answer ? displaySuccess()
-                                      : alert('Not quite the answer')
+                                      : resetTiles();
     } else {
         alert("That's not a word");
     }
-
-    resetTiles();
 }
 
 let word = '';
