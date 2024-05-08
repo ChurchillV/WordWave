@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="./src/styles/style.css">
     <link rel="icon" type="image/png" href="./images/wordwave_icon.png">
 </head>
-<body class="overflow-x-hidden">
+<body class="overflow-x-hidden h-screen">
 
     <!-- Header component -->
     <div class="font-space-mono text-center py-8 text-5xl border-b border-black shadow-md">
@@ -16,10 +16,10 @@
     </div>
 
     <div class="h-16 place-items-center hidden" id="alert-box">
-        <!-- Alert box -->
-        <div class="border border-black font-space-mono bg-white rounded-lg p-8 px-12 mt-12 z-30">
+        <!-- Info Modal -->
+        <div class="border border-black font-space-mono bg-white rounded-lg p-8 px-12 mt-12 z-40">
             <div class="flex flex-col items-center justify-center">
-                <div class="icon rounded-full border border-black p-6 bg-green-500 mb-5">
+                <div class="rounded-full border border-black p-6 bg-green-500 mb-5" id="modal-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" 
                         width="7em" 
                         height="7em" 
@@ -36,7 +36,7 @@
                     </svg>
                 </div>
     
-                <div class="alert-info text-center text-3xl">
+                <div class="text-center text-3xl" id="modal-info">
                     <p>Congratulations <span class="text-2xl">🎊</span></p>
                     <p>You win</p>
                 </div>
@@ -116,7 +116,7 @@
     
 
     <!-- Main body -->
-    <div class="relative lg:grid lg:grid-cols-8 lg:gap-4 mt-8 overflow-x-hidden z-0" id="main-body">
+    <div class="relative lg:grid lg:grid-cols-8 lg:gap-4 mt-8 overflow-x-hidden" id="main-body">
 
         <!-- Left Sidebar -->
         <div class="col-span-1 lg:flex lg:flex-col hidden justify-center items-center border border-black shadow-md rounded-r-lg p-5 text-center font-space-mono">
@@ -161,10 +161,10 @@
             </div>
         </div>
         <!-- Center piece -->
-        <div class="col-span-6 flex flex-col items-center mx-12 z-10">
+        <div class="col-span-6 flex flex-col lg:justify-center lg:items-center justify-end items-center mx-12 center-piece">
 
             <!-- Hamburger Menu for smaller screens -->
-            <div class="lg:hidden self-start mt-5 mb-8 border w-fit border-black hover:cursor-pointer hover:shadow-md hover:brightness-75" id="open-menu-button">
+            <div class="lg:hidden self-start mt-5 mb-5 border w-fit border-black hover:cursor-pointer hover:shadow-md hover:brightness-75" id="open-menu-button">
                 <svg xmlns="http://www.w3.org/2000/svg" 
                 width="3em" 
                     height="3em" 
@@ -174,14 +174,14 @@
                 </svg>
             </div>
 
-            <div class="guess-row flex items-center">
+            <div class="guess-row flex items-center justify-end lg:mt-0 sm:mt-24">
                 <div class="user-input-tile" contenteditable="true"></div>
                 <div class="user-input-tile" contenteditable="true"></div>
                 <div class="user-input-tile" contenteditable="true"></div>
                 <div class="user-input-tile" contenteditable="true"></div>
                 <div class="user-input-tile" contenteditable="true"></div>
             </div>
-            <div class="guess-row flex items-center">
+            <!-- <div class="guess-row flex items-center">
                 <div class="user-input-tile" contenteditable="true"></div>
                 <div class="user-input-tile" contenteditable="true"></div>
                 <div class="user-input-tile" contenteditable="true"></div>
@@ -217,7 +217,7 @@
                 <div class="user-input-tile" contenteditable="true"></div>
             </div>
 
-            <!-- Virtual keyboard
+            Virtual keyboard
             <div class="simple-keyboard"></div> 
             <input class="input" placeholder="Tap on the virtual keyboard to start" /> -->
 
@@ -243,7 +243,7 @@
         </div>
 
         <!-- Colour tiles for smaller screens -->
-        <div class="flex flex-row items-center justify-center font-space-mono lg:hidden">
+        <div class="flex flex-row items-center justify-center font-space-mono mt-28 lg:hidden">
             <div class="letter-tile-mini green bg-green-600 text-2xl text-white tooltip hover:bg-green-800">
                 3
                 <span class="tooltiptext tooltiptext-top text-sm text-nowrap">Accurately positioned letters</span>

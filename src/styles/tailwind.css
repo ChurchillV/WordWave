@@ -43,7 +43,7 @@
 }
 
 .user-input-tile {
-    @apply lg:px-6 lg:py-4 py-4 px-6 border border-black shadow-md text-center w-fit lg:my-3 lg:mx-2 m-1 font-space-mono;
+    @apply lg:px-10 lg:py-8 py-4 px-6 border border-black shadow-md text-center w-fit lg:my-5 lg:mx-4 m-1 font-space-mono text-lg;
 }
 
 .sidebar-content {
