@@ -9,6 +9,17 @@ let modalInfo = document.getElementById('modal-info');
 let resetButton = document.getElementById('reset-button');
 let okButton = document.getElementById('ok-button');
 
+// Arrays of letters entered by the user
+const greenLetters = [];
+const yellowLetters = [];
+const redLetters = [];
+
+// Display the number of letters of each colour
+document.querySelectorAll('.green-letters').innerText = greenLetters.length;
+document.querySelectorAll('.yellow-letters').innerText = yellowLetters.length;
+document.querySelectorAll('.red-letters').innerText = redLetters.length;
+
+
 // No functionality for sidebar items yet
 menuItems.forEach(menuItem => {
     menuItem.addEventListener('click', function() {
@@ -127,13 +138,32 @@ async function analyseAnswer() {
             setTimeout(() => {
                 tile.classList.add('text-white');
                 if (userInput === letter) {
-                    tile.classList.add('bg-green-500'); // 🟩 
+                    tile.classList.add('bg-green-500'); // 🟩
+                    if(!greenLetters.includes(userInput)) {
+                        greenLetters.push(userInput); 
+                        document.querySelector('.green-letters').textContent = greenLetters.length;
+                        document.querySelector('.green-letters-2').textContent = greenLetters.length;
+                        console.log("done");
+                        console.log(greenLetters);
+                    }
                 } else if (answer.includes(userInput)) {
-                    console.log('Yellow');
                     tile.classList.add('bg-yellow-500'); // 🟨 
+                    if(!yellowLetters.includes(userInput)) {
+                        yellowLetters.push(userInput); 
+                        document.querySelector('.yellow-letters').textContent = yellowLetters.length;
+                        document.querySelector('.yellow-letters-2').textContent = yellowLetters.length;
+                        console.log("done");
+                        console.log(yellowLetters);
+                    }
                 } else {
-                    console.log('Red');
                     tile.classList.add('bg-red-500'); // 🔴
+                    if(!redLetters.includes(userInput)) {
+                        redLetters.push(userInput); 
+                        document.querySelector('.red-letters').textContent = redLetters.length;
+                        document.querySelector('.red-letters-2').textContent = redLetters.length;
+                        console.log("done");
+                        console.log(redLetters);
+                    }
                 }
 
                 // Resolve the promise after all setTimeout calls are completed
