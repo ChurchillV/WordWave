@@ -15,21 +15,6 @@
         WordWave
     </div>
 
-    <div class="h-16 place-items-center hidden" id="alert-box">
-        <!-- Info Modal -->
-        <div class="border border-black font-space-mono bg-white rounded-lg p-8 px-12 mt-12 z-40">
-            <div class="flex flex-col items-center justify-center">
-                <div class="rounded-full border border-black p-6 mb-5" id="modal-icon"></div>
-    
-                <div class="text-center text-3xl" id="modal-info"></div>
-
-                <div class="bg-green-500 font-space-monob p-4 px-10 mt-6 hover:bg-green-800 hover:cursor-pointer text-white hidden" id="ok-button">
-                    OK
-                </div>
-            </div>
-        </div>
-    </div>
-
     <div class="absolute hidden w-full left-0 z-20 top-1/2 ml-12" id="sidebar">
         <!-- Sidebar menu for smaller screens -->
         <div class="sidebar-content">
@@ -96,6 +81,20 @@
         </div>
     </div>
     
+    <div class="h-16 place-items-center hidden w-full" id="alert-box">
+        <!-- Info Modal -->
+        <div class="border border-black font-space-mono bg-white rounded-lg p-8 px-12 mt-12 z-40">
+            <div class="flex flex-col items-center justify-center">
+                <div class="rounded-full border border-black p-6 mb-5" id="modal-icon"></div>
+    
+                <div class="text-center text-3xl" id="modal-info"></div>
+
+                <div class="bg-green-500 font-space-monob p-4 px-10 mt-6 hover:bg-green-800 hover:cursor-pointer text-white hidden" id="ok-button">
+                    OK
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- Main body -->
     <div class="relative lg:grid lg:grid-cols-8 lg:gap-4 mt-8 overflow-x-hidden" id="main-body">
@@ -157,7 +156,7 @@
             </div>
 
             <!-- Section for displaying previous user inputs -->
-            <div class="lg:grid lg:grid-cols-3 lg:gap-4 place-items-center flex flex-col">
+            <div class="lg:grid lg:grid-cols-3 lg:gap-4 place-items-center flex flex-col z-0">
                 <div class="lg:grid lg:grid-rows-2 lg:m-4">
                     <div class="prev-attempt border border-blue-300 rounded-lg">
                         <div class="attempt-title">Attempt 1</div>

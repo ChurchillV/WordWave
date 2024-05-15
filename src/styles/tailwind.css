@@ -63,7 +63,7 @@
 }
 
 .attempt {
-    @apply px-1 border border-black m-1 shadow-lg text-sm;
+    @apply px-1 border border-black m-1 shadow-lg text-sm -z-40;
 }
 
 .green {

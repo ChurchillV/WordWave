@@ -79,13 +79,13 @@ function displaySuccess() {
     modalIcon.innerHTML = successIcon;
     modalIcon.classList.add('bg-green-500');
     modalInfo.innerHTML = successMessage;
-
     document.body.classList.add('bg-slate-400');
 
     // Loop through each input tile and set contenteditable to false
     userTiles.forEach(tile => {
         tile.contentEditable = 'false';
     });  
+
 }
 
 // Function to notify user of a wrong answer
