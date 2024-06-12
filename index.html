@@ -11,8 +11,18 @@
 <body class="overflow-x-hidden h-screen">
 
     <!-- Header component -->
-    <div class="font-space-mono text-center py-8 text-5xl border-b border-black shadow-md">
-        WordWave
+    <div class="font-space-mono text-center lg:py-8 py-4 bg-white border-b border-black shadow-md flex flex-row justify-between items-center lg:relative fixed w-full top-0 z-10">
+        <!-- Hamburger Menu for smaller screens -->
+        <div class="lg:hidden border w-fit ml-1 border-black hover:cursor-pointer hover:shadow-md hover:brightness-75" id="open-menu-button">
+           <svg xmlns="http://www.w3.org/2000/svg" 
+           width="3em" 
+               height="3em" 
+               viewBox="0 0 24 24">
+               <path fill="currentColor" 
+               d="M3 18v-2h18v2zm0-5v-2h18v2zm0-5V6h18v2z"/>
+           </svg>
+       </div>
+        <div class="text-5xl flex-1 text-center lg:flex-none">WordWave</div>
     </div>
 
     <div class="absolute hidden w-full left-0 z-20 top-1/2 ml-12" id="sidebar">
@@ -143,17 +153,6 @@
         </div>
         <!-- Center piece -->
         <div class="col-span-6 flex flex-col lg:justify-center lg:items-center justify-end items-center mx-12 center-piece">
-
-            <!-- Hamburger Menu for smaller screens -->
-            <div class="lg:hidden self-start mt-5 mb-5 border w-fit border-black hover:cursor-pointer hover:shadow-md hover:brightness-75" id="open-menu-button">
-                <svg xmlns="http://www.w3.org/2000/svg" 
-                width="3em" 
-                    height="3em" 
-                    viewBox="0 0 24 24">
-                    <path fill="currentColor" 
-                    d="M3 18v-2h18v2zm0-5v-2h18v2zm0-5V6h18v2z"/>
-                </svg>
-            </div>
 
             <!-- Section for displaying previous user inputs -->
             <div class="lg:grid lg:grid-cols-3 lg:gap-4 place-items-center flex flex-col z-0">
